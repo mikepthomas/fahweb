@@ -32,12 +32,12 @@
 
         <!-- Included CSS Files (Compressed) -->
         <link rel="stylesheet" href="<s:url value="/css/bootstrap.min.css"/>"/>
-        <link rel="stylesheet" href="<s:url value="/css/bootstrap-responsive.min.css"/>"/>
+        <link rel="stylesheet" href="<s:url value="/css/bootstrap-theme.min.css"/>"/>
 
         <!-- Included CSS Files (Uncompressed) -->
         <!--
         <link rel="stylesheet" href="<s:url value="/css/bootstrap.css"/>">
-        <link rel="stylesheet" href="<s:url value="/css/bootstrap-responsive.css"/>">
+        <link rel="stylesheet" href="<s:url value="/css/bootstrap-theme.css"/>">
         -->
         <link rel="stylesheet" href="<s:url value="/css/app.css"/>"/>
 
@@ -50,47 +50,43 @@
     <body>
 
         <!-- Header and Nav -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-list-alt icon-white"></span>
-                    </a>
-                    <a class="brand" href="<s:url value="/index.jsp"/>"><s:text name="Home"/></a>
-
-                    <div class="nav-collapse collapse">
-                        <!-- Left Nav Section -->
-                        <ul class="nav">
-                            <li class="divider-vertical"></li>
-                            <li><a href="#"><s:text name="Learn"/></a></li>
-                            <li class="divider-vertical"></li>
-                            <li class="dropdown" id="stats">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#stats">
-                                    <s:text name="Stats"/>
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="<s:url namespace="/stats" action="listTeams"/>">Team Stats</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="<s:url namespace="/stats" action="listUsers"/>">User Stats</a></li>
-                                </ul>
-                            </li>
-                            <li class="divider-vertical"></li>
-                            <li><a href="#"><s:text name="About"/></a></li>
-                            <li class="divider-vertical"></li>
-                            <li><a href="<s:url namespace="/client" action="client"/>">Client</a></li>
-                            <li class="divider-vertical"></li>
-                        </ul>
-                    </div>
-
-                    <!-- Right Nav Section -->
-                    <form class="navbar-form form-search pull-right hidden-phone">
-                        <div class="input-append">
-                            <input type="text" class="span2 search-query" placeholder="Search">
-                            <button type="submit" class="btn"><i class="icon-search"></i></button>
-                        </div>
-                    </form>
-                </div>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<s:url value="/index.jsp"/>"><s:text name="Home"/></a>
             </div>
-        </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav  navbar-nav">
+
+                    <li><a href="#"><s:text name="Learn"/></a></li>
+
+                    <li class="dropdown" id="stats">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <s:text name="Stats"/>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<s:url namespace="/stats" action="listTeams"/>">Team Stats</a></li>
+                            <li><a href="<s:url namespace="/stats" action="listUsers"/>">User Stats</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><s:text name="About"/></a></li>
+                    <li><a href="<s:url namespace="/client" action="client"/>">Client</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </nav>
         <!-- End Header and Nav -->

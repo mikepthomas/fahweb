@@ -8,28 +8,28 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <jsp:include page="header.jsp"/>
 
-<div class="container-fluid">
-    <div class="span10 offset1">
-        <div class="row-fluid">
-            <div class="well">
-                <br class="hidden-phone"/>
+<div class="container">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            <div class="well well-lg">
+                <br/>
                 <h2><s:property value="pageTitle" default="Results"/></h2>
             </div>
         </div>
 
-        <div class="row-fluid">
+        <div class="row">
             <ul class="breadcrumb">
-                <li><a href="#">Home</a><span class="divider">/</span></li>
-                <li><a href="#">Features</a><span class="divider">/</span></li>
-                <li><a href="#">Gene Splicing</a><span class="divider">/</span></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Gene Splicing</a></li>
                 <li class="active">Home</li>
             </ul>
         </div>
 
-        <div class="row-fluid">
+        <div class="row">
 
             <!-- Nav Sidebar -->
-            <div class="span3">
+            <div class="col-md-3">
                 <div class="well sidebar-nav">
                     <img class="img-polaroid" alt="" src="http://placehold.it/175x125&text=[img]"/>
 
@@ -48,10 +48,10 @@
             </div>
 
             <!-- Main Feed -->
-            <div class="span9">
+            <div class="col-md-9">
 
                 <!-- Results Table -->
-                <table class="table table-bordered table-condensed table-hover">
+                <table class="table table-bordered table-condensed table-hover table-striped">
                     <thead>
                         <tr>
                             <th><s:text name="Column1"/></th>
@@ -84,31 +84,28 @@
                 </table>
 
                 <!-- End Results Table -->
-                <div class="pagination pagination-centered">
-                    <ul>
-
-                        <li<s:if test="page <= 1"> class="disabled"</s:if>>
+                <ul class="pagination">
+                    <li<s:if test="page <= 1"> class="disabled"</s:if>>
+                        <s:a>
+                            <s:param name="page" value="page - 1"/>
+                            &laquo;
+                        </s:a>
+                    </li>
+                    <s:iterator begin="1" end="10" status="pageNumber">
+                        <li<s:if test="page == #pageNumber.index + 1"> class="active"</s:if>>
                             <s:a>
-                                <s:param name="page" value="page - 1"/>
-                                &laquo;
+                                <s:param name="page" value="#pageNumber.index + 1"/>
+                                <s:property value="#pageNumber.index + 1"/>
                             </s:a>
                         </li>
-                        <s:iterator begin="1" end="10" status="pageNumber">
-                            <li<s:if test="page == #pageNumber.index + 1"> class="active"</s:if>>
-                                <s:a>
-                                    <s:param name="page" value="#pageNumber.index + 1"/>
-                                    <s:property value="#pageNumber.index + 1"/>
-                                </s:a>
-                            </li>
-                        </s:iterator>
-                        <li>
-                            <s:a>
-                                <s:param name="page" value="page + 1"/>
-                                &raquo;
-                            </s:a>
-                        </li>
-                    </ul>
-                </div>
+                    </s:iterator>
+                    <li>
+                        <s:a>
+                            <s:param name="page" value="page + 1"/>
+                            &raquo;
+                        </s:a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
