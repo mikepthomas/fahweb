@@ -8,55 +8,55 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <jsp:include page="header.jsp"/>
 
-<div class="container-fluid">
-    <div class="span10 offset1">
-        <div class="row-fluid">
-            <div class="well">
-                <br class="hidden-phone"/>
+<div class="container">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            <div class="well well-lg">
+                <br/>
                 <h2><s:property value="pageTitle" default="Results"/></h2>
             </div>
         </div>
 
-        <div class="row-fluid">
+        <div class="row">
             <div class="btn-toolbar">
-                <div class="btn-group hidden-phone">
-                    <a href="<s:url value="/configure.jsp"/>" role="button" class="btn btn-large btn-primary" data-toggle="modal" data-target="#configureModal">
-                        <i class="icon-cog icon-white"></i> Configure
+                <div class="btn-group hidden-sm">
+                    <a href="<s:url value="/configure.jsp"/>" role="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#configureModal">
+                        <span class="glyphicon glyphicon-cog"></span> Configure
                     </a>
-                    <a href="<s:url value="/preferences.jsp"/>" role="button" class="btn btn-large btn-primary" data-toggle="modal" data-target="#preferencesModal">
-                        <i class="icon-wrench icon-white"></i> Preferences
+                    <a href="<s:url value="/preferences.jsp"/>" role="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#preferencesModal">
+                        <span class="glyphicon glyphicon-wrench"></span> Preferences
                     </a>
                 </div>
                 <div class="btn-group">
                     <s:url action="client" var="fold">
                         <s:param name="control">fold</s:param>
                     </s:url>
-                    <a href="${fold}" class="btn btn-large btn-primary">
-                        <i class="icon-play icon-white"></i> Fold
+                    <a href="${fold}" class="btn btn-lg btn-primary">
+                        <span class="glyphicon glyphicon-play"></span> Fold
                     </a>
                     <s:url action="client" var="pause">
                         <s:param name="control">pause</s:param>
                     </s:url>
-                    <a href="${pause}" class="btn btn-large btn-primary">
-                        <i class="icon-pause icon-white"></i> Pause
+                    <a href="${pause}" class="btn btn-lg btn-primary">
+                        <span class="glyphicon glyphicon-pause"></span> Pause
                     </a>
                     <s:url action="client" var="finish">
                         <s:param name="control">finish</s:param>
                     </s:url>
-                    <a href="${finish}" class="btn btn-large btn-primary">
-                        <i class="icon-step-forward icon-white"></i> Finish
+                    <a href="${finish}" class="btn btn-lg btn-primary">
+                        <span class="glyphicon glyphicon-step-forward"></span> Finish
                     </a>
                 </div>
-                <div class="btn-group pull-right hidden-phone">
-                    <a href="<s:url value="/about.jsp"/>" role="button" class="btn btn-large btn-primary" data-toggle="modal" data-target="#aboutModal">
-                        <i class="icon-star-empty icon-white"></i> About
+                <div class="btn-group pull-right hidden-sm">
+                    <a href="<s:url value="/about.jsp"/>" role="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#aboutModal">
+                        <span class="glyphicon glyphicon-star-empty"></span> About
                     </a>
                 </div>
-                <div class="btn-group pull-right hidden-phone">
-                    <a class="btn btn-large btn-primary">
-                        <i class="icon-list icon-white"></i> Novice
+                <div class="btn-group pull-right hidden-sm">
+                    <a class="btn btn-lg btn-primary">
+                        <span class="glyphicon glyphicon-list"></span> Novice
                     </a>
-                    <a class="btn btn-large btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <a class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown">
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -68,72 +68,65 @@
             </div>
 
             <!-- Modal -->
-            <div id="configureModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="configureModalLabel" aria-hidden="true">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h3 id="configureModalLabel">Configure</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="progress progress-striped active">
-                        <div class="bar" style="width: 100%;">
-                            Loading…
+            <div id="configureModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="configureModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 id="configureModalLabel">Configure</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar" style="width: 100%;">
+                                    Loading…
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <s:url namespace="client" action="client" var="configure">
-                        <s:param name="control">configure</s:param>
-                    </s:url>
-                    <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</a>
-                    <a href="${configure}" class="btn btn-primary">Save changes</a>
                 </div>
             </div>
-            <div id="preferencesModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h3 id="preferencesModalLabel">Preferences</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="progress progress-striped active">
-                        <div class="bar" style="width: 100%;">
-                            Loading…
+            <div id="preferencesModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 id="preferencesModalLabel">Preferences</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar" style="width: 100%;">
+                                    Loading…
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <s:url namespace="client" action="client" var="preferences">
-                        <s:param name="control">preferences</s:param>
-                    </s:url>
-                    <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</a>
-                    <a href="${preferences}" class="btn btn-primary">Save changes</a>
                 </div>
             </div>
-            <div id="aboutModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h3 id="aboutModalLabel">About</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="progress progress-striped active">
-                        <div class="bar" style="width: 100%;">
-                            Loading…
+            <div id="aboutModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 id="aboutModalLabel">About</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar" style="width: 100%;">
+                                    Loading…
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">
-                        <i class="icon-remove icon-white"></i> Close
-                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="row-fluid">
+        <div class="row">
             <fieldset>
                 <legend>localhost <span class="text-success">Online</span> <s:property value="status" default="Status"/></legend>
 
-                <div class="row-fluid">
-                    <div class="span6">
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="well">
                             <fieldset>
                                 <legend>Identity</legend>
@@ -142,7 +135,7 @@
                         </div>
                     </div>
 
-                    <div class="span6">
+                    <div class="col-md-6">
                         <div class="well">
                             <fieldset>
                                 <legend>Stats</legend>
@@ -152,11 +145,11 @@
                     </div>
                 </div>
 
-                <div class="row-fluid">
+                <div class="row">
                     <div>
                         <fieldset>
                             <legend>Work Queue</legend>
-                            <table class="table table-hover">
+                            <table class="table table-condensed table-hover table-striped">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -164,7 +157,7 @@
                                         <th>Progress</th>
                                         <th>ETA</th>
                                         <th>Credit</th>
-                                        <th class="hidden-phone">PRCG</th>
+                                        <th class="hidden-sm">PRCG</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -177,7 +170,7 @@
                                         </td>
                                         <td>
                                             <div class="progress progress-striped active">
-                                                <div class="bar" style="width: <s:property value="progress" default="Progress"/>;">
+                                                <div class="progress-bar" style="width: <s:property value="progress" default="Progress"/>;">
                                                     <s:property value="progress" default="Progress"/>
                                                 </div>
                                             </div>
@@ -188,7 +181,7 @@
                                         <td>
                                             <s:property value="credit" default="Credit"/>
                                         </td>
-                                        <td class="hidden-phone">
+                                        <td class="hidden-sm">
                                             <s:property value="prcg" default="PRCG"/>
                                         </td>
                                     </tr>
@@ -198,7 +191,7 @@
                     </div>
                 </div>
 
-                <div class="row-fluid">
+                <div class="row">
                     <div>
                         <div class="well">
                             <fieldset>

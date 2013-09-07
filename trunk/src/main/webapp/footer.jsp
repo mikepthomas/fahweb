@@ -10,10 +10,10 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="span6">
+            <div class="col-md-6">
                 <p><s:text name="Copyright"/></p>
             </div>
-            <div class="span6">
+            <div class="col-md-6">
                 <ul class="footer-links pull-right">
                     <li><a href="#">Link 1</a></li>
                     <li><a href="#">Link 2</a></li>
@@ -26,19 +26,19 @@
 </footer>
                 
 <!-- Included JS Files (Compressed) -->
-<script src="<s:url value="/js/jquery-1.9.1.min.js"/>"></script>
+<script src="<s:url value="/js/jquery-2.0.3.min.js"/>"></script>
 <script src="<s:url value="/js/bootstrap.min.js"/>"></script>
 
 <!-- Included JS Files (Uncompressed) -->
 <!--
-<script src="<s:url value="/js/jquery-1.9.1.js"/>"></script>
+<script src="<s:url value="/js/jquery-2.0.3.js"/>"></script>
 <script src="<s:url value="/js/bootstrap.js"/>"></script>
 -->
 
 <script>
     $(document).ready(function() {
         $(function(){
-            $('#myCarousel').carousel();
+            $('#carousel').carousel();
         });
     });
 </script>
