@@ -10,7 +10,7 @@
 
     <name>FAHWeb</name>
     <description>Web front end to control Folding@Home v7 clients</description>
-    <url>http://${project.domain.reports}/${project.name}/</url>
+    <url>http://${project.domain.reports}/${project.name}</url>
     <inceptionYear>2012</inceptionYear>
     <organization/>
     <licenses>
@@ -30,7 +30,7 @@
             <id>montycrabapple1@gmail.com</id>
             <name>Mike Thomas</name>
             <email>montycrabapple@hotmail.com</email>
-            <url>http://www.mikethomas.info/</url>
+            <url>http://www.mikethomas.info</url>
             <timezone>0</timezone>
             <roles>
                 <role>Owner</role>
@@ -46,29 +46,29 @@
     <modules/>
 
     <scm>
-        <connection>scm:svn:http://${project.domain.source}/svn/trunk/</connection>
-        <developerConnection>scm:svn:https://${project.domain.source}/svn/trunk/</developerConnection>
+        <connection>scm:svn:http://${project.domain.source}/svn/trunk</connection>
+        <developerConnection>scm:svn:https://${project.domain.source}/svn/trunk</developerConnection>
         <tag>HEAD</tag>
-        <url>http://${project.domain.source}/svn/trunk/</url>
+        <url>http://code.google.com/p/fahweb/source/browse</url>
     </scm>
     <issueManagement>
         <system>Google Code</system>
-        <url>http://code.google.com/p/fahweb/issues/</url>
+        <url>http://code.google.com/p/fahweb/issues</url>
     </issueManagement>
     <ciManagement>
         <system>Jenkins</system>
-        <url>http://${project.domain.reports}/jenkins/job/${project.name}/</url>
+        <url>http://${project.domain.reports}/jenkins/job/${project.name}</url>
     </ciManagement>
     <distributionManagement>
         <repository>
             <id>releases</id>
             <name>Releases (Nexus)</name>
-            <url>http://${project.domain.reports}/nexus/content/repositories/releases/</url>
+            <url>http://${project.domain.reports}/nexus/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Snapshots (Nexus)</name>
-            <url>http://${project.domain.reports}/nexus/content/repositories/snapshots/</url>
+            <url>http://${project.domain.reports}/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -424,7 +424,7 @@
                 <version>3.0.6</version>
                 <executions>
                     <execution>
-                        <phase>process-resources</phase>
+                        <phase>generate-test-resources</phase>
                         <configuration>
                             <propertyFileWillOverride>true</propertyFileWillOverride>
                             <propertyFile>src/main/resources/database.properties</propertyFile>
