@@ -52,7 +52,7 @@
         <listener-class>net.bull.javamelody.SessionListener</listener-class>
     </listener>
 
-    <login-config>
+<!--    <login-config>
         <auth-method>BASIC</auth-method>
         <realm-name>Monitoring</realm-name>
     </login-config>
@@ -67,11 +67,11 @@
         <auth-constraint>
             <role-name>monitoring</role-name>
         </auth-constraint>
-        <!-- if SSL enabled (SSL and certificate must then be configured in the server)
+         if SSL enabled (SSL and certificate must then be configured in the server)
         <user-data-constraint>
                 <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
-        -->
-    </security-constraint>
+        
+    </security-constraint>-->
 
 </web-app>
