@@ -16,8 +16,8 @@
  */
 package com.googlecode.fahweb.action;
 
-import com.googlecode.jfold.model.examples.ExampleUnit;
-import com.googlecode.jfold.model.unit.Unit;
+import com.googlecode.jfold.examples.ExampleUnit;
+import com.googlecode.jfold.unit.Unit;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

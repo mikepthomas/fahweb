@@ -5,7 +5,7 @@
 
 <struts>
 
-    <constant name="struts.action.excludePattern" value="/services/.*"/>
+    <constant name="struts.action.excludePattern" value="/monitoring.*"/>
     <constant name="struts.custom.i18n.resources" value="global"/>
     <constant name="struts.devMode" value="true"/>
 
