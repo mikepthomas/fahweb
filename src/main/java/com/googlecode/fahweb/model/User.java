@@ -1,24 +1,32 @@
+package com.googlecode.fahweb.model;
+
 /*
- * Copyright (C) 2012 Michael Thomas <michael4.thomas@live.uwe.ac.uk>
- *
+ * #%L
+ * FAHWeb
+ * %%
+ * Copyright (C) 2012 - 2014 Michael Thomas <mikepthomas@outlook.com>
+ * %%
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the 
+ * License, or (at your option) any later version.
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * You should have received a copy of the GNU General Public 
+ * License along with this program.  If not, see
+ * <http://www.gnu.org/licenses/gpl-3.0.html>.
+ * #L%
  */
-package com.googlecode.fahweb.model;
 
 /**
+ * <p>User class.</p>
  *
- * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
+ * @author Michael Thomas (mikepthomas@outlook.com)
+ * @version $Id: $Id
  */
 public class User {
 
@@ -28,8 +36,19 @@ public class User {
     private int sum;
     private int team;
 
+    /**
+     * <p>Constructor for User.</p>
+     */
     public User() {}
 
+    /**
+     * <p>Constructor for User.</p>
+     *
+     * @param name a {@link java.lang.String} object.
+     * @param newCredit a long.
+     * @param sum a int.
+     * @param team a int.
+     */
     public User(String name, long newCredit, int sum, int team) {
         this.name = name;
         this.newCredit = newCredit;

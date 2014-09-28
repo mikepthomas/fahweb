@@ -1,26 +1,34 @@
+package com.googlecode.fahweb.model;
+
 /*
- * Copyright (C) 2012 Michael Thomas <michael4.thomas@live.uwe.ac.uk>
- *
+ * #%L
+ * FAHWeb
+ * %%
+ * Copyright (C) 2012 - 2014 Michael Thomas <mikepthomas@outlook.com>
+ * %%
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the 
+ * License, or (at your option) any later version.
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * You should have received a copy of the GNU General Public 
+ * License along with this program.  If not, see
+ * <http://www.gnu.org/licenses/gpl-3.0.html>.
+ * #L%
  */
-package com.googlecode.fahweb.model;
 
 import java.io.Serializable;
 
 /**
+ * <p>Team class.</p>
  *
- * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
+ * @author Michael Thomas (mikepthomas@outlook.com)
+ * @version $Id: $Id
  */
 public class Team implements Serializable {
 
@@ -30,8 +38,20 @@ public class Team implements Serializable {
     private long score;
     private int wu;
 
+    /**
+     * <p>Constructor for Team.</p>
+     */
     public Team() {}
 
+    /**
+     * <p>Constructor for Team.</p>
+     *
+     * @param team a int.
+     * @param teamName a {@link java.lang.String} object.
+     * @param teamName a {@link java.lang.String} object.
+     * @param score a long.
+     * @param wu a int.
+     */
     public Team(int team, String teamName, long score, int wu) {
         this.team = team;
         this.teamName = teamName;
