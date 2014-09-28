@@ -81,7 +81,7 @@
         <project.domain.source>fahweb.googlecode.com</project.domain.source>
         <sonar.language>java</sonar.language>
 
-        <org.apache.struts.version>2.3.15.2</org.apache.struts.version>
+        <org.apache.struts.version>2.3.16.3</org.apache.struts.version>
         <org.apache.shiro.version>1.2.2</org.apache.shiro.version>
         <org.slf4j.version>1.5.11</org.slf4j.version>
         <org.springframework.version>3.2.4.RELEASE</org.springframework.version>
@@ -200,12 +200,12 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.2.6.Final</version>
+            <version>4.2.15.Final</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.26</version>
+            <version>5.1.33</version>
             <scope>runtime</scope>
         </dependency>
 
@@ -247,7 +247,7 @@
         <dependency>
             <groupId>net.bull.javamelody</groupId>
             <artifactId>javamelody-core</artifactId>
-            <version>1.47.0</version>
+            <version>1.52.0</version>
         </dependency>
         <!-- itext, option to add PDF export -->
         <dependency>
@@ -300,17 +300,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>2.4</version>
+                    <version>2.4.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>2.5</version>
+                    <version>2.6</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>2.8</version>
+                    <version>2.9</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -320,17 +320,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5</version>
+                    <version>2.5.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.4.1</version>
+                    <version>2.5.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.16</version>
+                    <version>2.17</version>
                     <configuration>
                         <classpathDependencyExcludes>
                             <!-- exclude code absent api -->
@@ -397,7 +397,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.4</version>
                 <configuration>
                     <locales>en,de,fr,sv</locales>
                 </configuration>
@@ -421,7 +421,7 @@
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
-                <version>3.0.6</version>
+                <version>3.2.2</version>
                 <executions>
                     <execution>
                         <phase>generate-test-resources</phase>
@@ -531,7 +531,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>3.0.0</version>
                 <configuration>
                     <effort>Max</effort>
                     <encoding>${project.build.sourceEncoding}</encoding>
@@ -553,7 +553,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>1.5</version>
+                <version>1.7</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -620,7 +620,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-deploy-plugin</artifactId>
-                        <version>2.8</version>
+                        <version>2.8.2</version>
                         <configuration>
                             <updateReleaseInfo>true</updateReleaseInfo>
                         </configuration>
@@ -668,7 +668,7 @@
                     <plugin>
                         <inherited>true</inherited>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>2.2.1</version>
+                        <version>2.3</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -682,12 +682,15 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>license-maven-plugin</artifactId>
-                        <version>1.5</version>
+                        <version>1.7</version>
                         <configuration>
                             <canUpdateCopyright>true</canUpdateCopyright>
                             <encoding>${project.build.sourceEncoding}</encoding>
                             <excludes>
+                                <exclude>**/*.css</exclude>
+                                <exclude>**/*.js</exclude>
                                 <exclude>**/*.json</exclude>
+                                <exclude>**/*.sql</exclude>
                             </excludes>
                             <licenseFile>${project.basedir}/src/COPYING</licenseFile>
                             <licenseName>gpl_v3</licenseName>
