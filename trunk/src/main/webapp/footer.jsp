@@ -47,12 +47,12 @@
 </footer>
                 
 <!-- Included JS Files (Compressed) -->
-<script src="<s:url value="/js/jquery-2.0.3.min.js"/>"></script>
+<script src="<s:url value="/js/jquery-2.1.1.min.js"/>"></script>
 <script src="<s:url value="/js/bootstrap.min.js"/>"></script>
 
 <!-- Included JS Files (Uncompressed) -->
 <!--
-<script src="<s:url value="/js/jquery-2.0.3.js"/>"></script>
+<script src="<s:url value="/js/jquery-2.1.1.js"/>"></script>
 <script src="<s:url value="/js/bootstrap.js"/>"></script>
 -->
 

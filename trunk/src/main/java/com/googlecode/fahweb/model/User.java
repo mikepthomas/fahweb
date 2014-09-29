@@ -33,13 +33,15 @@ public class User {
     private int uniqueId;
     private String name;
     private long newCredit;
-    private int sum;
+    private long sum;
     private int team;
 
     /**
      * <p>Constructor for User.</p>
      */
-    public User() {}
+    public User() {
+        super();
+    }
 
     /**
      * <p>Constructor for User.</p>
@@ -49,7 +51,7 @@ public class User {
      * @param sum a int.
      * @param team a int.
      */
-    public User(String name, long newCredit, int sum, int team) {
+    public User(String name, long newCredit, long sum, int team) {
         this.name = name;
         this.newCredit = newCredit;
         this.sum = sum;
@@ -115,7 +117,7 @@ public class User {
      *
      * @return the value of sum
      */
-    public int getSum() {
+    public long getSum() {
         return sum;
     }
 
@@ -124,7 +126,7 @@ public class User {
      *
      * @param sum new value of sum
      */
-    public void setSum(int sum) {
+    public void setSum(long sum) {
         this.sum = sum;
     }
 
