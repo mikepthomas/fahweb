@@ -33,11 +33,15 @@
     </appender>
 
     <!-- specify the logging level for loggers from other libraries -->
-    <logger name="org.apache.struts2">
+    <logger name="com.opensymphony">
         <level value="INFO"/>
     </logger>
 
-    <logger name="com.opensymphony">
+    <logger name="com.googlecode.jfold">
+        <level value="DEBUG"/>
+    </logger>
+
+    <logger name="org.apache.struts2">
         <level value="INFO"/>
     </logger>
 

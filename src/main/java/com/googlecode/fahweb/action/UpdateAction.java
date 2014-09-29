@@ -41,8 +41,8 @@ public class UpdateAction extends ActionSupport {
 
     /** Constant <code>LINE_DELIMITER="\t"</code> */
     public static final String LINE_DELIMITER = "\t";
-    private TeamService teamService;
-    private UserService userService;
+    private final TeamService teamService;
+    private final UserService userService;
 
     /**
      * <p>Constructor for UpdateAction.</p>
@@ -58,8 +58,8 @@ public class UpdateAction extends ActionSupport {
     /** {@inheritDoc} */
     @Override
     public String execute() throws Exception {
-        //updateTeams();
-        updateUsers();
+        updateTeams();
+        //updateUsers();
         return SUCCESS;
     }
 
@@ -132,7 +132,7 @@ public class UpdateAction extends ActionSupport {
 
         String name = array[0];
         long newcredit = Long.parseLong(array[1]);
-        int sum = Integer.parseInt(array[2]);
+        long sum = Long.parseLong(array[2]);
         int team = Integer.parseInt(array[3]);
 
         return new User(name, newcredit, sum, team);

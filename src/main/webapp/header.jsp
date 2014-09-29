@@ -72,42 +72,46 @@
 
         <!-- Header and Nav -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="<s:url value="/index.jsp"/>"><s:text name="Home"/></a>
-            </div>
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<s:url value="/index.jsp"/>"><s:text name="Home"/></a>
+                </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav  navbar-nav">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
 
-                    <li><a href="#"><s:text name="Learn"/></a></li>
+                        <li><a href="#"><s:text name="Learn"/></a></li>
 
-                    <li class="dropdown" id="stats">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            <s:text name="Stats"/>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<s:url namespace="/stats" action="listTeams"/>">Team Stats</a></li>
-                            <li><a href="<s:url namespace="/stats" action="listUsers"/>">User Stats</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><s:text name="About"/></a></li>
-                    <li><a href="<s:url namespace="/client" action="client"/>">Client</a></li>
-                </ul>
-                <form class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div><!-- /.navbar-collapse -->
+                        <li class="dropdown" id="stats">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <s:text name="Stats"/>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<s:url namespace="/stats" action="listTeams"/>">Team Stats</a></li>
+                                <li><a href="<s:url namespace="/stats" action="listUsers"/>">User Stats</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><s:text name="About"/></a></li>
+                        <li><a href="<s:url namespace="/client" action="client"/>">Client</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </span>
+                        </div>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
         </nav>
         <!-- End Header and Nav -->

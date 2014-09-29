@@ -45,7 +45,7 @@
                         <span class="glyphicon glyphicon-cog"></span> Configure
                     </a>
                     <a href="<s:url value="/preferences.jsp"/>" role="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#preferencesModal">
-                        <span class="glyphicon glyphicon-wrench"></span> Preferences
+                        <span class="glyphicon glyphicon-dashboard"></span> Preferences
                     </a>
                 </div>
                 <div class="btn-group">
@@ -72,19 +72,6 @@
                     <a href="<s:url value="/about.jsp"/>" role="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#aboutModal">
                         <span class="glyphicon glyphicon-star-empty"></span> About
                     </a>
-                </div>
-                <div class="btn-group pull-right hidden-sm">
-                    <a class="btn btn-lg btn-primary">
-                        <span class="glyphicon glyphicon-list"></span> Novice
-                    </a>
-                    <a class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Novice</a></li>
-                        <li><a href="#">Advanced</a></li>
-                        <li><a href="#">Expert</a></li>
-                    </ul>
                 </div>
             </div>
 

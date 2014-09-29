@@ -41,13 +41,14 @@ public class Team implements Serializable {
     /**
      * <p>Constructor for Team.</p>
      */
-    public Team() {}
+    public Team() {
+        super();
+    }
 
     /**
      * <p>Constructor for Team.</p>
      *
      * @param team a int.
-     * @param teamName a {@link java.lang.String} object.
      * @param teamName a {@link java.lang.String} object.
      * @param score a long.
      * @param wu a int.
