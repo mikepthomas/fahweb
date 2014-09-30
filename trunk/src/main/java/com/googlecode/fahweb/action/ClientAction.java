@@ -2,7 +2,7 @@ package com.googlecode.fahweb.action;
 
 /*
  * #%L
- * FAHWeb
+ * This file is part of FAHWeb.
  * %%
  * Copyright (C) 2012 - 2014 Michael Thomas <mikepthomas@outlook.com>
  * %%
@@ -10,19 +10,18 @@ package com.googlecode.fahweb.action;
  * it under the terms of the GNU General Public License as
  * published by the Free Software Foundation, either version 3 of the 
  * License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public 
  * License along with this program.  If not, see
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
 
-import com.googlecode.jfold.ClientConnection;
 import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.unit.Unit;
 import com.opensymphony.xwork2.ActionSupport;
@@ -37,11 +36,11 @@ public class ClientAction extends ActionSupport {
 
     private Unit unit;
     private String control;
+    private Connection connection;
 
     /** {@inheritDoc} */
     @Override
     public String execute() throws Exception {
-        Connection connection = new ClientConnection();
         this.unit = connection.queueInfo().get(0);
         System.out.println(control);
         return SUCCESS;
@@ -145,5 +144,9 @@ public class ClientAction extends ActionSupport {
      */
     public void setControl(String control) {
         this.control = control;
+    }
+
+    public void setConnection(Connection connection) {
+        this.connection = connection;
     }
 }
