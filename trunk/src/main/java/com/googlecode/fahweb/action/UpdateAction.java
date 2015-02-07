@@ -81,7 +81,7 @@ public class UpdateAction extends ActionSupport {
             String line = buf.readLine();
 
             if (line.split(LINE_DELIMITER).length != 4) {
-                line += (buf.readLine().replace("\\n", ""));
+                line += buf.readLine().replace("\\n", "");
             }
 
             teamService.addTeam(createTeamFromLine(line));

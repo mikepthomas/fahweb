@@ -24,6 +24,8 @@ package com.googlecode.fahweb.action;
 
 import com.opensymphony.xwork2.ActionProxy;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.struts2.StrutsSpringTestCase;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -50,11 +52,14 @@ public class TeamActionTest extends StrutsSpringTestCase {
 
     /**
      * Test of execute method, of class TeamAction.
+     * @throws java.lang.Exception
      */
     @Test
     public void testExecute() throws Exception {
         request.setParameter("page", "1");
         ActionProxy actionProxy = getActionProxy("/stats/listTeams.action");
+        Map<String, Object> sessionMap = new HashMap<>();
+        actionProxy.getInvocation().getInvocationContext().setSession(sessionMap);
         TeamAction action = (TeamAction) actionProxy.getAction();
         assertNotNull("The action is null but should not be.", action);
         String result = actionProxy.execute();
