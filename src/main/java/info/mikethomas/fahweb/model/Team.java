@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.model;
+package info.mikethomas.fahweb.model;
 
 /*
  * #%L
@@ -22,40 +22,42 @@ package com.googlecode.fahweb.model;
  * #L%
  */
 
+import java.io.Serializable;
+
 /**
- * <p>User class.</p>
+ * <p>Team class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-public class User {
+public class Team implements Serializable {
 
     private int uniqueId;
-    private String name;
-    private long newCredit;
-    private long sum;
     private int team;
+    private String teamName;
+    private long score;
+    private int wu;
 
     /**
-     * <p>Constructor for User.</p>
+     * <p>Constructor for Team.</p>
      */
-    public User() {
+    public Team() {
         super();
     }
 
     /**
-     * <p>Constructor for User.</p>
+     * <p>Constructor for Team.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param newCredit a long.
-     * @param sum a int.
      * @param team a int.
+     * @param teamName a {@link java.lang.String} object.
+     * @param score a long.
+     * @param wu a int.
      */
-    public User(String name, long newCredit, long sum, int team) {
-        this.name = name;
-        this.newCredit = newCredit;
-        this.sum = sum;
+    public Team(int team, String teamName, long score, int wu) {
         this.team = team;
+        this.teamName = teamName;
+        this.score = score;
+        this.wu = wu;
     }
 
     /**
@@ -77,74 +79,74 @@ public class User {
     }
 
     /**
-     * Get the value of name
+     * Get the value of Team
      *
-     * @return the value of name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Set the value of name
-     *
-     * @param name new value of name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Get the value of newCredit
-     *
-     * @return the value of newCredit
-     */
-    public long getNewCredit() {
-        return newCredit;
-    }
-
-    /**
-     * Set the value of newCredit
-     *
-     * @param newCredit new value of newCredit
-     */
-    public void setNewCredit(long newCredit) {
-        this.newCredit = newCredit;
-    }
-
-    /**
-     * Get the value of sum
-     *
-     * @return the value of sum
-     */
-    public long getSum() {
-        return sum;
-    }
-
-    /**
-     * Set the value of sum
-     *
-     * @param sum new value of sum
-     */
-    public void setSum(long sum) {
-        this.sum = sum;
-    }
-
-    /**
-     * Get the value of team
-     *
-     * @return the value of team
+     * @return the value of Team
      */
     public int getTeam() {
         return team;
     }
 
     /**
-     * Set the value of team
+     * Set the value of Team
      *
-     * @param team new value of team
+     * @param team new value of Team
      */
     public void setTeam(int team) {
         this.team = team;
+    }
+
+    /**
+     * Get the value of teamName
+     *
+     * @return the value of teamName
+     */
+    public String getTeamName() {
+        return teamName;
+    }
+
+    /**
+     * Set the value of teamName
+     *
+     * @param teamName new value of teamName
+     */
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    /**
+     * Get the value of score
+     *
+     * @return the value of score
+     */
+    public long getScore() {
+        return score;
+    }
+
+    /**
+     * Set the value of score
+     *
+     * @param score new value of score
+     */
+    public void setScore(long score) {
+        this.score = score;
+    }
+
+    /**
+     * Get the value of wu
+     *
+     * @return the value of wu
+     */
+    public int getWu() {
+        return wu;
+    }
+
+    /**
+     * Set the value of wu
+     *
+     * @param wu new value of wu
+     */
+    public void setWu(int wu) {
+        this.wu = wu;
     }
 }

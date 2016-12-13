@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.googlecode.fahweb</groupId>
+    <groupId>info.mikethomas.fahweb</groupId>
     <artifactId>FAHWeb</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -27,10 +27,10 @@
 
     <developers>
         <developer>
-            <id>montycrabapple1@gmail.com</id>
-            <name>Mike Thomas</name>
-            <email>montycrabapple@hotmail.com</email>
-            <url>http://www.mikethomas.info</url>
+            <id>mikepthomas</id>
+            <name>Michael Thomas</name>
+            <email>mikepthomas@outlook.com</email>
+            <url>${project.domain.reports}</url>
             <timezone>0</timezone>
             <roles>
                 <role>Owner</role>
@@ -46,14 +46,14 @@
     <modules/>
 
     <scm>
-        <connection>scm:svn:http://${project.domain.source}/svn/trunk</connection>
-        <developerConnection>scm:svn:https://${project.domain.source}/svn/trunk</developerConnection>
-        <tag>HEAD</tag>
-        <url>http://code.google.com/p/fahweb/source/browse</url>
+        <connection>scm:git:git://github.com/mikepthomas/fahweb.git</connection>
+        <developerConnection>scm:git:git@github.com:mikepthomas/fahweb.git</developerConnection>
+        <tag>master</tag>
+        <url>${project.domain.source}/fahweb</url>
     </scm>
     <issueManagement>
-        <system>Google Code</system>
-        <url>http://code.google.com/p/fahweb/issues</url>
+        <system>GitHub Issues</system>
+        <url>${project.domain.source}/fahweb/issues</url>
     </issueManagement>
     <ciManagement>
         <system>Jenkins</system>
@@ -74,15 +74,17 @@
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.targetJdk>1.7</project.build.targetJdk>
+
         <project.domain.deployment>oss.sonatype.org</project.domain.deployment>
         <project.domain.reports>www.mikethomas.info</project.domain.reports>
-        <project.domain.source>fahweb.googlecode.com</project.domain.source>
-        <sonar.language>java</sonar.language>
+        <project.domain.source>https://github.com/mikepthomas</project.domain.source>
 
         <!-- Dependency Versions -->
-        <org.apache.struts.version>2.3.20</org.apache.struts.version>
+        <org.apache.struts.version>2.3.30</org.apache.struts.version>
         <org.apache.shiro.version>1.2.3</org.apache.shiro.version>
         <org.slf4j.version>1.6.3</org.slf4j.version>
         <org.springframework.version>4.1.4.RELEASE</org.springframework.version>
@@ -111,7 +113,7 @@
         <version.maven-surefire-plugin>2.18.1</version.maven-surefire-plugin>
         <version.maven-war-plugin>2.6</version.maven-war-plugin>
         <version.clirr-maven-plugin>2.6.1</version.clirr-maven-plugin>
-        <version.cobertura-maven-plugin>2.6</version.cobertura-maven-plugin>
+        <version.cobertura-maven-plugin>2.7</version.cobertura-maven-plugin>
         <version.findbugs-maven-plugin>3.0.0</version.findbugs-maven-plugin>
         <version.javancss-maven-plugin>2.1</version.javancss-maven-plugin>
         <version.jdepend-maven-plugin>2.0</version.jdepend-maven-plugin>
@@ -126,7 +128,7 @@
     <dependencyManagement/>
     <dependencies>
         <dependency>
-            <groupId>com.googlecode.jfold</groupId>
+            <groupId>info.mikethomas</groupId>
             <artifactId>jfold</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -391,10 +393,7 @@
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
-                    <encoding>${project.build.sourceEncoding}</encoding>
                     <showDeprecation>true</showDeprecation>
-                    <source>${project.build.targetJdk}</source>
-                    <target>${project.build.targetJdk}</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -426,16 +425,15 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${version.maven-resources-plugin}</version>
-                <configuration>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>${version.maven-site-plugin}</version>
                 <configuration>
-                    <locales>en,de,fr,sv</locales>
+                    <generateSitemap>true</generateSitemap>
+                    <locales>en</locales>
+                    <skipDeploy>true</skipDeploy>
                 </configuration>
                 <executions>
                     <execution>
@@ -653,6 +651,29 @@
             <id>release-profile</id>
             <build>
                 <plugins>
+                    <plugin>
+                        <groupId>com.github.github</groupId>
+                        <artifactId>site-maven-plugin</artifactId>
+                        <version>0.12</version>
+                        <configuration>
+                            <message>Creating site for ${project.version}</message>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>site</goal>
+                                </goals>
+                                <phase>site-deploy</phase>
+                                <configuration>
+                                    <server>github</server>
+                                    <!-- The commit message -->
+                                    <message>Building site for my project</message>
+                                    <!-- Use merge or override the content -->
+                                    <merge>true</merge>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-deploy-plugin</artifactId>

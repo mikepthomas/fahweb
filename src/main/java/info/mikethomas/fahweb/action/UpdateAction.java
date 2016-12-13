@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.action;
+package info.mikethomas.fahweb.action;
 
 /*
  * #%L
@@ -22,10 +22,10 @@ package com.googlecode.fahweb.action;
  * #L%
  */
 
-import com.googlecode.fahweb.model.Team;
-import com.googlecode.fahweb.model.User;
-import com.googlecode.fahweb.service.TeamService;
-import com.googlecode.fahweb.service.UserService;
+import info.mikethomas.fahweb.model.Team;
+import info.mikethomas.fahweb.model.User;
+import info.mikethomas.fahweb.service.TeamService;
+import info.mikethomas.fahweb.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -47,8 +47,8 @@ public class UpdateAction extends ActionSupport {
     /**
      * <p>Constructor for UpdateAction.</p>
      *
-     * @param teamService a {@link com.googlecode.fahweb.service.TeamService} object.
-     * @param userService a {@link com.googlecode.fahweb.service.UserService} object.
+     * @param teamService a {@link info.mikethomas.fahweb.service.TeamService} object.
+     * @param userService a {@link info.mikethomas.fahweb.service.UserService} object.
      */
     public UpdateAction(TeamService teamService, UserService userService) {
         this.teamService = teamService;

@@ -29,9 +29,9 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-    <bean id="connection" class="com.googlecode.jfold.ClientConnection" />
+    <bean id="connection" class="info.mikethomas.jfold.ClientConnection" />
 
-    <bean id="clientAction" class="com.googlecode.fahweb.action.ClientAction">
+    <bean id="clientAction" class="info.mikethomas.fahweb.action.ClientAction">
         <property name="connection" ref="connection" />
     </bean>
     

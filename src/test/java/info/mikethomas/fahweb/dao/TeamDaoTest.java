@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.dao;
+package info.mikethomas.fahweb.dao;
 
 /*
  * #%L
@@ -22,7 +22,8 @@ package com.googlecode.fahweb.dao;
  * #L%
  */
 
-import com.googlecode.fahweb.model.Team;
+import info.mikethomas.fahweb.dao.TeamDao;
+import info.mikethomas.fahweb.model.Team;
 import java.util.List;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;

@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.dao;
+package info.mikethomas.fahweb.dao;
 
 /*
  * #%L
@@ -22,7 +22,7 @@ package com.googlecode.fahweb.dao;
  * #L%
  */
 
-import com.googlecode.fahweb.model.User;
+import info.mikethomas.fahweb.model.Team;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -30,13 +30,13 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * <p>UserDao class.</p>
+ * <p>TeamDao class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
 @Repository
-public class UserDao {
+public class TeamDao {
 
     private SessionFactory sessionFactory;
 
@@ -50,44 +50,27 @@ public class UserDao {
     }
 
     /**
-     * <p>addUser.</p>
+     * <p>addTeam.</p>
      *
-     * @param user a {@link com.googlecode.fahweb.model.User} object.
+     * @param team a {@link info.mikethomas.fahweb.model.Team} object.
      */
     @Transactional
-    public void addUser(User user) {
-        sessionFactory.getCurrentSession().save(user);
+    public void addTeam(Team team) {
+        sessionFactory.getCurrentSession().save(team);
     }
 
     /**
-     * <p>listUser.</p>
+     * <p>listTeam.</p>
      *
      * @param firstResult a int.
      * @param maxResults a int.
      * @return a {@link java.util.List} object.
      */
     @Transactional
-    public List<User> listUser(int firstResult, int maxResults) {
-        Query query = sessionFactory.getCurrentSession().createQuery("FROM User ORDER BY newCredit DESC");
+    public List<Team> listTeam(int firstResult, int maxResults) {
+        Query query = sessionFactory.getCurrentSession().createQuery("FROM Team ORDER BY score DESC");
         query.setFirstResult(firstResult);
         query.setMaxResults(maxResults);
-        return query.list();
-    }
-
-    /**
-     * <p>listUserForTeam.</p>
-     *
-     * @param team a int.
-     * @param firstResult a int.
-     * @param maxResults a int.
-     * @return a {@link java.util.List} object.
-     */
-    @Transactional
-    public List<User> listUserForTeam(int team, int firstResult, int maxResults) {
-        Query query = sessionFactory.getCurrentSession().createQuery("FROM User WHERE team=:team ORDER BY newCredit DESC");
-        query.setFirstResult(firstResult);
-        query.setMaxResults(maxResults);
-        query.setInteger("team", team);
         return query.list();
     }
 }

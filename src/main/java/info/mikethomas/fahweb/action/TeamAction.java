@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.action;
+package info.mikethomas.fahweb.action;
 
 /*
  * #%L
@@ -22,37 +22,37 @@ package com.googlecode.fahweb.action;
  * #L%
  */
 
-import com.googlecode.fahweb.model.User;
-import com.googlecode.fahweb.service.UserService;
+import info.mikethomas.fahweb.model.Team;
+import info.mikethomas.fahweb.service.TeamService;
 import java.util.List;
 
 /**
- * <p>UserAction class.</p>
+ * <p>TeamAction class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-public class UserAction extends StatsActionBase {
+public class TeamAction extends StatsActionBase {
 
-    private UserService userService;
-    private List<User> userList;
+    private TeamService teamService;
+    private List<Team> teamList;
 
     /**
-     * <p>Constructor for UserAction.</p>
+     * <p>Constructor for TeamAction.</p>
      *
-     * @param userService a {@link com.googlecode.fahweb.service.UserService} object.
+     * @param teamService a {@link info.mikethomas.fahweb.service.TeamService} object.
      */
-    public UserAction(UserService userService) {
-        this.userService = userService;
+    public TeamAction(TeamService teamService) {
+        this.teamService = teamService;
     }
 
     /** {@inheritDoc} */
     @Override
     public String execute() throws Exception {
-        setPageTitle("User Statistics");
+        setPageTitle("Team Statistics");
         int firstResult = (getPage() - 1) * RESULTS_PER_PAGE;
-        userList = userService.listUser(firstResult, RESULTS_PER_PAGE);
-        if (userList.isEmpty()) {
+        teamList = teamService.listTeam(firstResult, RESULTS_PER_PAGE);
+        if (teamList.isEmpty()) {
             addActionError("No Results Found");
         }
 
@@ -60,11 +60,11 @@ public class UserAction extends StatsActionBase {
     }
 
     /**
-     * <p>Getter for the field <code>userList</code>.</p>
+     * <p>Getter for the field <code>teamList</code>.</p>
      *
      * @return a {@link java.util.List} object.
      */
-    public List<User> getUserList() {
-        return userList;
+    public List<Team> getTeamList() {
+        return teamList;
     }
 }

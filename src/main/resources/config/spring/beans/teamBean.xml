@@ -29,15 +29,15 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-    <bean id="teamDao" class="com.googlecode.fahweb.dao.TeamDao">
+    <bean id="teamDao" class="info.mikethomas.fahweb.dao.TeamDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="teamService" class="com.googlecode.fahweb.service.TeamService">
+    <bean id="teamService" class="info.mikethomas.fahweb.service.TeamService">
         <property name="teamDao" ref="teamDao"/>
     </bean>
 
-    <bean id="teamAction" class="com.googlecode.fahweb.action.TeamAction">
+    <bean id="teamAction" class="info.mikethomas.fahweb.action.TeamAction">
         <constructor-arg ref="teamService"/>
     </bean>
     

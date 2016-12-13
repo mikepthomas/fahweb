@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.action;
+package info.mikethomas.fahweb.action;
 
 /*
  * #%L
@@ -22,6 +22,7 @@ package com.googlecode.fahweb.action;
  * #L%
  */
 
+import info.mikethomas.fahweb.action.UserAction;
 import com.opensymphony.xwork2.ActionProxy;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.HashMap;

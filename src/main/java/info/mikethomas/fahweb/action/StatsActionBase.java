@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.action;
+package info.mikethomas.fahweb.action;
 
 /*
  * #%L

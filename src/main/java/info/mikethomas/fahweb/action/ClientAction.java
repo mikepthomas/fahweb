@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.action;
+package info.mikethomas.fahweb.action;
 
 /*
  * #%L
@@ -22,8 +22,8 @@ package com.googlecode.fahweb.action;
  * #L%
  */
 
-import com.googlecode.jfold.Connection;
-import com.googlecode.jfold.unit.Unit;
+import info.mikethomas.jfold.Connection;
+import info.mikethomas.jfold.unit.Unit;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

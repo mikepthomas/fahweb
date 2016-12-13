@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.service;
+package info.mikethomas.fahweb.service;
 
 /*
  * #%L
@@ -22,8 +22,8 @@ package com.googlecode.fahweb.service;
  * #L%
  */
 
-import com.googlecode.fahweb.dao.UserDao;
-import com.googlecode.fahweb.model.User;
+import info.mikethomas.fahweb.dao.UserDao;
+import info.mikethomas.fahweb.model.User;
 import java.util.List;
 
 /**
@@ -39,7 +39,7 @@ public class UserService {
     /**
      * <p>Setter for the field <code>userDao</code>.</p>
      *
-     * @param userDao a {@link com.googlecode.fahweb.dao.UserDao} object.
+     * @param userDao a {@link info.mikethomas.fahweb.dao.UserDao} object.
      */
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
@@ -48,7 +48,7 @@ public class UserService {
     /**
      * <p>addUser.</p>
      *
-     * @param user a {@link com.googlecode.fahweb.model.User} object.
+     * @param user a {@link info.mikethomas.fahweb.model.User} object.
      */
     public void addUser(User user) {
         userDao.addUser(user);

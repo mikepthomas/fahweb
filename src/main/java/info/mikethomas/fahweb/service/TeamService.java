@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.dao;
+package info.mikethomas.fahweb.service;
 
 /*
  * #%L
@@ -22,41 +22,36 @@ package com.googlecode.fahweb.dao;
  * #L%
  */
 
-import com.googlecode.fahweb.model.Team;
+import info.mikethomas.fahweb.dao.TeamDao;
+import info.mikethomas.fahweb.model.Team;
 import java.util.List;
-import org.hibernate.Query;
-import org.hibernate.SessionFactory;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
- * <p>TeamDao class.</p>
+ * <p>TeamService class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-@Repository
-public class TeamDao {
+public class TeamService {
 
-    private SessionFactory sessionFactory;
-
+    TeamDao teamDao;
+    
     /**
-     * <p>Setter for the field <code>sessionFactory</code>.</p>
+     * <p>Setter for the field <code>teamDao</code>.</p>
      *
-     * @param sessionFactory a {@link org.hibernate.SessionFactory} object.
+     * @param teamDao a {@link info.mikethomas.fahweb.dao.TeamDao} object.
      */
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public void setTeamDao(TeamDao teamDao) {
+        this.teamDao = teamDao;
     }
 
     /**
      * <p>addTeam.</p>
      *
-     * @param team a {@link com.googlecode.fahweb.model.Team} object.
+     * @param team a {@link info.mikethomas.fahweb.model.Team} object.
      */
-    @Transactional
     public void addTeam(Team team) {
-        sessionFactory.getCurrentSession().save(team);
+        teamDao.addTeam(team);
     }
 
     /**
@@ -66,11 +61,7 @@ public class TeamDao {
      * @param maxResults a int.
      * @return a {@link java.util.List} object.
      */
-    @Transactional
     public List<Team> listTeam(int firstResult, int maxResults) {
-        Query query = sessionFactory.getCurrentSession().createQuery("FROM Team ORDER BY score DESC");
-        query.setFirstResult(firstResult);
-        query.setMaxResults(maxResults);
-        return query.list();
+        return teamDao.listTeam(firstResult, maxResults);
     }
 }

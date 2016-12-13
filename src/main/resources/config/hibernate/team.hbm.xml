@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!--
   #%L
   This file is part of FAHWeb.
@@ -20,17 +21,14 @@
   <http://www.gnu.org/licenses/gpl-3.0.html>.
   #L%
   -->
-
-<!DOCTYPE hibernate-mapping PUBLIC '-//Hibernate/Hibernate Mapping DTD 3.0//EN' 'http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd'>
-
 <hibernate-mapping package="config.hibernate">
-    <class name="com.googlecode.fahweb.model.Team" table="daily_team_summary">
-        <id name="uniqueId" column="ID">
-            <generator class="native"/>
-        </id>
-        <property name="team"/>
-        <property name="teamName" column="teamname"/>
-        <property name="score"/>
-        <property name="wu"/>
-    </class>
+  <class name="info.mikethomas.fahweb.model.Team" table="daily_team_summary">
+    <id column="ID" name="uniqueId">
+      <generator class="native"/>
+    </id>
+    <property name="team"/>
+    <property column="teamname" name="teamName"/>
+    <property name="score"/>
+    <property name="wu"/>
+  </class>
 </hibernate-mapping>

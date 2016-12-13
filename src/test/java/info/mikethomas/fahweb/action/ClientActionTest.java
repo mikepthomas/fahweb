@@ -1,4 +1,4 @@
-package com.googlecode.fahweb.action;
+package info.mikethomas.fahweb.action;
 
 /*
  * #%L
@@ -22,6 +22,7 @@ package com.googlecode.fahweb.action;
  * #L%
  */
 
+import info.mikethomas.fahweb.action.ClientAction;
 import com.opensymphony.xwork2.ActionProxy;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.HashMap;
@@ -37,9 +38,9 @@ import org.junit.Ignore;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  */
-public class TeamActionTest extends StrutsSpringTestCase {
+public class ClientActionTest extends StrutsSpringTestCase {
 
-    public TeamActionTest() {
+    public ClientActionTest() {
     }
 
     @BeforeClass
@@ -51,16 +52,16 @@ public class TeamActionTest extends StrutsSpringTestCase {
     }
 
     /**
-     * Test of execute method, of class TeamAction.
+     * Test of execute method, of class ClientAction.
      * @throws java.lang.Exception
      */
     @Test
     public void testExecute() throws Exception {
-        request.setParameter("page", "1");
-        ActionProxy actionProxy = getActionProxy("/stats/listTeams.action");
+        request.setParameter("control", "settings");
+        ActionProxy actionProxy = getActionProxy("/client/client.action");
         Map<String, Object> sessionMap = new HashMap<>();
         actionProxy.getInvocation().getInvocationContext().setSession(sessionMap);
-        TeamAction action = (TeamAction) actionProxy.getAction();
+        ClientAction action = (ClientAction) actionProxy.getAction();
         assertNotNull("The action is null but should not be.", action);
         String result = actionProxy.execute();
         assertEquals("The execute method did not return " + ActionSupport.SUCCESS + " but should have.", ActionSupport.SUCCESS, result);

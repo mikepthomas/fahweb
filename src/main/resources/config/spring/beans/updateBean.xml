@@ -29,7 +29,7 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-    <bean id="updateAction" class="com.googlecode.fahweb.action.UpdateAction">
+    <bean id="updateAction" class="info.mikethomas.fahweb.action.UpdateAction">
         <constructor-arg ref="teamService"/>
         <constructor-arg ref="userService"/>
     </bean>
