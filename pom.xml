@@ -4,15 +4,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>info.mikethomas.fahweb</groupId>
-    <artifactId>FAHWeb</artifactId>
+    <artifactId>fahweb</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>FAHWeb</name>
     <description>Web front end to control Folding@Home v7 clients</description>
-    <url>http://${project.domain.reports}/${project.name}</url>
+    <url>${project.organization.url}/${project.artifactId}</url>
     <inceptionYear>2012</inceptionYear>
-    <organization/>
+    <organization>
+        <name>Mike Thomas</name>
+        <url>http://www.mikethomas.info</url>
+    </organization>
     <licenses>
         <license>
             <name>GNU General Public License (GPL) version 3.0</name>
@@ -28,10 +31,10 @@
     <developers>
         <developer>
             <id>mikepthomas</id>
-            <name>Michael Thomas</name>
+            <name>${project.organization.name}</name>
             <email>mikepthomas@outlook.com</email>
-            <url>${project.domain.reports}</url>
-            <timezone>0</timezone>
+            <url>${project.organization.url}</url>
+            <timezone>Europe/London</timezone>
             <roles>
                 <role>Owner</role>
             </roles>
@@ -41,47 +44,49 @@
 
     <mailingLists/>
 
-    <prerequisites/>
+    <prerequisites>
+        <maven>3.0.5</maven>
+    </prerequisites>
 
     <modules/>
 
     <scm>
-        <connection>scm:git:git://github.com/mikepthomas/fahweb.git</connection>
-        <developerConnection>scm:git:git@github.com:mikepthomas/fahweb.git</developerConnection>
+        <connection>scm:git:git://github.com/${project.repository.path}.git</connection>
+        <developerConnection>scm:git:git@github.com:${project.repository.path}.git</developerConnection>
         <tag>master</tag>
-        <url>${project.domain.source}/fahweb</url>
+        <url>${project.domain.source}/${project.repository.path}</url>
     </scm>
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>${project.domain.source}/fahweb/issues</url>
+        <url>${project.domain.source}/${project.repository.path}/issues</url>
     </issueManagement>
     <ciManagement>
-        <system>Jenkins</system>
-        <url>http://${project.domain.reports}/jenkins/job/${project.name}</url>
+        <system>Travis</system>
+        <url>https://travis-ci.org/${project.repository.path}</url>
     </ciManagement>
     <distributionManagement>
         <repository>
             <id>releases</id>
             <name>Releases (Nexus)</name>
-            <url>http://${project.domain.reports}/nexus/content/repositories/releases</url>
+            <url>${project.organization.url}/nexus/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Snapshots (Nexus)</name>
-            <url>http://${project.domain.reports}/nexus/content/repositories/snapshots</url>
+            <url>${project.organization.url}/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <project.domain.deployment>oss.sonatype.org</project.domain.deployment>
-        <project.domain.reports>www.mikethomas.info</project.domain.reports>
-        <project.domain.source>https://github.com/mikepthomas</project.domain.source>
+        <project.domain.deployment>https://oss.sonatype.org</project.domain.deployment>
+        <project.domain.source>https://github.com</project.domain.source>
+        <project.repository.path>mikepthomas/${project.artifactId}</project.repository.path>
 
         <!-- Dependency Versions -->
         <org.apache.struts.version>2.3.30</org.apache.struts.version>
@@ -90,39 +95,20 @@
         <org.springframework.version>4.1.4.RELEASE</org.springframework.version>
 
         <!-- Plugin Versions -->
-        <version.maven-antrun-plugin>1.8</version.maven-antrun-plugin>
-        <version.maven-assembly-plugin>2.5.3</version.maven-assembly-plugin>
         <version.maven-changelog-plugin>2.3</version.maven-changelog-plugin>
-        <version.maven-checkstyle-plugin>2.13</version.maven-checkstyle-plugin>
-        <version.maven-clean-plugin>2.6.1</version.maven-clean-plugin>
-        <version.maven-compiler-plugin>3.2</version.maven-compiler-plugin>
-        <version.maven-dependency-plugin>2.10</version.maven-dependency-plugin>
-        <version.maven-deploy-plugin>2.8.2</version.maven-deploy-plugin>
-        <version.maven-enforcer-plugin>1.4</version.maven-enforcer-plugin>
-        <version.maven-gpg-plugin>1.6</version.maven-gpg-plugin>
-        <version.maven-install-plugin>2.5.2</version.maven-install-plugin>
-        <version.maven-jar-plugin>2.5</version.maven-jar-plugin>
-        <version.maven-javadoc-plugin>2.9.1</version.maven-javadoc-plugin>
+        <version.maven-checkstyle-plugin>2.17</version.maven-checkstyle-plugin>
+        <version.jacoco-maven-plugin>0.8.2</version.jacoco-maven-plugin>
+        <version.maven-javadoc-plugin>2.10.4</version.maven-javadoc-plugin>
         <version.maven-jxr-plugin>2.5</version.maven-jxr-plugin>
-        <version.maven-pmd-plugin>3.3</version.maven-pmd-plugin>
-        <version.maven-project-info-reports-plugin>2.8</version.maven-project-info-reports-plugin>
-        <version.maven-release-plugin>2.5.1</version.maven-release-plugin>
-        <version.maven-resources-plugin>2.7</version.maven-resources-plugin>
-        <version.maven-site-plugin>3.4</version.maven-site-plugin>
-        <version.maven-source-plugin>2.4</version.maven-source-plugin>
-        <version.maven-surefire-plugin>2.18.1</version.maven-surefire-plugin>
-        <version.maven-war-plugin>2.6</version.maven-war-plugin>
-        <version.clirr-maven-plugin>2.6.1</version.clirr-maven-plugin>
-        <version.cobertura-maven-plugin>2.7</version.cobertura-maven-plugin>
-        <version.findbugs-maven-plugin>3.0.0</version.findbugs-maven-plugin>
+        <version.maven-pmd-plugin>3.7</version.maven-pmd-plugin>
+        <version.maven-project-info-reports-plugin>2.9</version.maven-project-info-reports-plugin>
+        <version.maven-surefire-plugin>2.19.1</version.maven-surefire-plugin>
+        <version.clirr-maven-plugin>2.8</version.clirr-maven-plugin>
         <version.javancss-maven-plugin>2.1</version.javancss-maven-plugin>
         <version.jdepend-maven-plugin>2.0</version.jdepend-maven-plugin>
-        <version.l10n-maven-plugin>1.0-alpha-2</version.l10n-maven-plugin>
-        <version.license-maven-plugin>1.8</version.license-maven-plugin>
-        <version.liquibase-maven-plugin>3.3.0</version.liquibase-maven-plugin>
-        <version.sonar-maven-plugin>2.1</version.sonar-maven-plugin>
+        <version.license-maven-plugin>1.12</version.license-maven-plugin>
         <version.taglist-maven-plugin>2.4</version.taglist-maven-plugin>
-        <version.versions-maven-plugin>2.1</version.versions-maven-plugin>
+        <version.versions-maven-plugin>2.3</version.versions-maven-plugin>
     </properties>
 
     <dependencyManagement/>
@@ -309,61 +295,97 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>springsource-repo</id>
-            <name>SpringSource Repository</name>
-            <url>http://repo.springsource.org/release</url>
-        </repository>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Nexus Snapshots Repository</name>
-            <url>https://${project.domain.deployment}/content/repositories/snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-    <pluginRepositories/>
+    <!--
+    AVOID RELEASE REPOSITORY/PLUGINREPOSITORY:
+    <repositories></repositories>
+    <pluginRepositories></pluginRepositories>
+    -->
 
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>com.github.github</groupId>
+                    <artifactId>site-maven-plugin</artifactId>
+                    <version>0.12</version>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>
-                    <version>${version.maven-antrun-plugin}</version>
+                    <version>1.8</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>${version.maven-assembly-plugin}</version>
+                    <version>3.0.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>${version.maven-clean-plugin}</version>
+                    <version>3.0.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.6.1</version>
+                        <configuration>
+                        <showDeprecation>true</showDeprecation>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${version.maven-dependency-plugin}</version>
+                    <version>3.0.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>${version.maven-enforcer-plugin}</version>
+                    <version>1.4.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>${version.maven-install-plugin}</version>
+                    <version>2.5.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${version.maven-javadoc-plugin}</version>
+                    <configuration>
+                        <level>private</level>
+                        <quiet>true</quiet>
+                        <show>public</show>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>${version.maven-release-plugin}</version>
+                    <version>2.5.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.0.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.6</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.0.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -377,9 +399,14 @@
                     </configuration>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>sonar-maven-plugin</artifactId>
-                    <version>${version.sonar-maven-plugin}</version>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>${version.license-maven-plugin}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -387,19 +414,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.maven-compiler-plugin}</version>
-                <inherited>true</inherited>
                 <configuration>
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
-                    <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>${version.maven-dependency-plugin}</version>
                 <executions>
                     <execution>
                         <phase>validate</phase>
@@ -423,16 +446,9 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>${version.maven-resources-plugin}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>${version.maven-site-plugin}</version>
                 <configuration>
                     <generateSitemap>true</generateSitemap>
-                    <locales>en</locales>
                     <skipDeploy>true</skipDeploy>
                 </configuration>
                 <executions>
@@ -447,15 +463,26 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>${version.maven-war-plugin}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${version.jacoco-maven-plugin}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
-                <version>${version.liquibase-maven-plugin}</version>
+                <version>3.5.3</version>
                 <executions>
                     <execution>
                         <phase>generate-test-resources</phase>
@@ -475,12 +502,18 @@
     <reporting>
         <plugins>
             <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>3.1.10</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <xmlOutput>true</xmlOutput>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${version.maven-checkstyle-plugin}</version>
-                <configuration>
-                    <configLocation>config/sun_checks.xml</configLocation>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -511,12 +544,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>${version.maven-pmd-plugin}</version>
-                <configuration>
-                    <linkXref>true</linkXref>
-                    <minimumTokens>100</minimumTokens>
-                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-                    <targetJdk>${project.build.targetJdk}</targetJdk>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -552,30 +579,6 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <version>${version.cobertura-maven-plugin}</version>
-                <configuration>
-                    <formats>
-                        <format>html</format>
-                        <format>xml</format>
-                    </formats>
-                    <quiet>true</quiet>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${version.findbugs-maven-plugin}</version>
-                <configuration>
-                    <effort>Max</effort>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <findbugsXmlOutput>true</findbugsXmlOutput>
-                    <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-                    <xmlOutput>true</xmlOutput>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
                 <version>${version.javancss-maven-plugin}</version>
             </plugin>
@@ -606,6 +609,18 @@
                             <report>dependency-updates-report</report>
                             <report>plugin-updates-report</report>
                             <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${version.jacoco-maven-plugin}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
                         </reports>
                     </reportSet>
                 </reportSets>
@@ -654,7 +669,6 @@
                     <plugin>
                         <groupId>com.github.github</groupId>
                         <artifactId>site-maven-plugin</artifactId>
-                        <version>0.12</version>
                         <configuration>
                             <message>Creating site for ${project.version}</message>
                         </configuration>
@@ -677,7 +691,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-deploy-plugin</artifactId>
-                        <version>${version.maven-deploy-plugin}</version>
                         <configuration>
                             <updateReleaseInfo>true</updateReleaseInfo>
                         </configuration>
@@ -685,7 +698,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${version.maven-gpg-plugin}</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -725,7 +737,6 @@
                     <plugin>
                         <inherited>true</inherited>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>${version.maven-source-plugin}</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -739,7 +750,6 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>license-maven-plugin</artifactId>
-                        <version>${version.license-maven-plugin}</version>
                         <configuration>
                             <canUpdateCopyright>true</canUpdateCopyright>
                             <encoding>${project.build.sourceEncoding}</encoding>

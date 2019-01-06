@@ -4,25 +4,24 @@ package info.mikethomas.fahweb.action;
  * #%L
  * This file is part of FAHWeb.
  * %%
- * Copyright (C) 2012 - 2014 Michael Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2017 Michael Thomas <mikepthomas@outlook.com>
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
- * published by the Free Software Foundation, either version 3 of the 
+ * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public 
+ * 
+ * You should have received a copy of the GNU General Public
  * License along with this program.  If not, see
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
 
-import info.mikethomas.fahweb.action.UserAction;
 import com.opensymphony.xwork2.ActionProxy;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.HashMap;
@@ -53,7 +52,7 @@ public class UserActionTest extends StrutsSpringTestCase {
 
     /**
      * Test of execute method, of class UserAction.
-     * @throws java.lang.Exception
+     * @throws java.lang.Exception if any
      */
     @Test
     public void testExecute() throws Exception {

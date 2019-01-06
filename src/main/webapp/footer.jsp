@@ -2,7 +2,7 @@
   #%L
   FAHWeb
   %%
-  Copyright (C) 2012 - 2014 Michael Thomas <mikepthomas@outlook.com>
+  Copyright (C) 2012 - 2017 Michael Thomas <mikepthomas@outlook.com>
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as
@@ -45,24 +45,8 @@
         </div>
     </div>
 </footer>
-                
-<!-- Included JS Files (Compressed) -->
-<script src="<s:url value="/js/jquery-2.1.3.min.js"/>"></script>
-<script src="<s:url value="/js/bootstrap.min.js"/>"></script>
 
-<!-- Included JS Files (Uncompressed) -->
-<!--
-<script src="<s:url value="/js/jquery-2.1.3.js"/>"></script>
-<script src="<s:url value="/js/bootstrap.js"/>"></script>
--->
-
-<script>
-    $(document).ready(function() {
-        $(function(){
-            $('#carousel').carousel();
-        });
-    });
-</script>
+<script data-main="js/application" src="<s:url value="/js/libs/requirejs/require.js"/>"></script>
 
 </body>
 </html>

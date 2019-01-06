@@ -2,7 +2,7 @@
   #%L
   FAHWeb
   %%
-  Copyright (C) 2012 - 2014 Michael Thomas <mikepthomas@outlook.com>
+  Copyright (C) 2012 - 2017 Michael Thomas <mikepthomas@outlook.com>
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as

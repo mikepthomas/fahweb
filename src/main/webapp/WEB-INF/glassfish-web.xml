@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glassfish-web-app PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Servlet 3.0//EN" "http://glassfish.org/dtds/glassfish-web-app_3_0-1.dtd">
 <!--
   #%L
   FAHWeb
   %%
-  Copyright (C) 2012 - 2014 Michael Thomas <mikepthomas@outlook.com>
+  Copyright (C) 2012 - 2017 Michael Thomas <mikepthomas@outlook.com>
   %%
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as
@@ -20,8 +21,6 @@
   <http://www.gnu.org/licenses/gpl-3.0.html>.
   #L%
   -->
-
-<!DOCTYPE glassfish-web-app PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Servlet 3.0//EN" "http://glassfish.org/dtds/glassfish-web-app_3_0-1.dtd">
 <glassfish-web-app error-url="">
   <context-root>/FAHWeb</context-root>
   <class-loader delegate="true"/>
