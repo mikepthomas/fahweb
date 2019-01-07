@@ -78,7 +78,7 @@
                 <href>${project.url}</href>
             </topBarIcon>
             <gitHub>
-                <projectId>mikepthomas/fahsweb</projectId>
+                <projectId>mikepthomas/fahweb</projectId>
                 <ribbonOrientation>right</ribbonOrientation>
                 <ribbonColor>orange</ribbonColor>
             </gitHub>
